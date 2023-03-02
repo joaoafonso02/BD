@@ -30,7 +30,7 @@ Identify the entities, attributes, and relationships of the database.
 
 
 #### *b)* Caracterize as relações quanto ao grau, cardinalidade e obrigatoriedade de participação das instâncias das entidades no relacionamento.
-Specify the relationships regarding the degree, cardinality and instances mandatory participation of the entities in the relationship.
+Specify the relationships regarding the degree, cardinality and instances mandatory participation of the entities in the relationship. 
 
 
 |        Relação        	| Grau 	| Cardinalidade 	| Obrigatoriedade de Participação 	|
