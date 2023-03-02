@@ -1,5 +1,9 @@
 # BD: Guião 2
 
+# P1G7 - Membros:
+[João Afonso Ferreira](https://github.com/joaoafonso02), 103037  
+[Eduardo Fernandes](https://github.com/EduardoFernandesUA), 102648  
+
 ## Template para respostas ao guião da aula 2.
 Template for submission of answers to "aula 2" guide.
 
