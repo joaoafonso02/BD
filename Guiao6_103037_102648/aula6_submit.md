@@ -34,31 +34,48 @@ ORDER BY first_name, last_name
 ### *e)* Consulta definida em d) mas só os autores da Califórnia (CA) cujo último nome é diferente de ‘Ringer’; 
 
 ```
-... Write here your answer ...
+SELECT au_fname AS first_name, au_lname AS last_name, phone AS telephone, state
+	FROM authors
+	WHERE au_fname != 'Ringer' AND authors.state = 'CA'
+	ORDER BY au_fname, au_lname
 ```
 
 ### *f)* Todas as editoras (publishers) que tenham ‘Bo’ em qualquer parte do nome; 
 
 ```
-... Write here your answer ...
+SELECT *
+	FROM publishers
+	WHERE pub_name LIKE  '%BO%'
 ```
 
 ### *g)* Nome das editoras que têm pelo menos uma publicação do tipo ‘Business’; 
 
 ```
-... Write here your answer ...
+SELECT pub_name 
+	FROM publishers
+	INNER JOIN titles on publishers.pub_id=titles.pub_id
+	WHERE titles.type = 'Business'
 ```
 
 ### *h)* Número total de vendas de cada editora; 
 
 ```
-... Write here your answer ...
+SELECT pub_name, SUM(qty) AS Quantaty
+	FROM sales 
+	INNER JOIN titles ON sales.title_id=titles.title_id
+	INNER JOIN publishers ON publishers.pub_id=titles.pub_id
+	GROUP BY pub_name;
 ```
 
 ### *i)* Número total de vendas de cada editora agrupado por título; 
 
 ```
-... Write here your answer ...
+SELECT pub_name, title, SUM(qty) AS Quantaty
+	FROM sales 
+	INNER JOIN titles ON sales.title_id=titles.title_id
+	INNER JOIN publishers ON publishers.pub_id=titles.pub_id
+	GROUP BY pub_name, titles.title
+	ORDER BY pub_name;
 ```
 
 ### *j)* Nome dos títulos vendidos pela loja ‘Bookbeat’; 
